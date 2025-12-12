@@ -6,7 +6,8 @@ FROM python:3.13-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # install requirements
-COPY /src/python .
+RUN pwd
+COPY src/python .
 RUN uv sync
 
 # # # quarto update
