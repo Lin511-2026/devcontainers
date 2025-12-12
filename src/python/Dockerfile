@@ -7,7 +7,8 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # install requirements
 RUN pwd
-COPY src/python .
+COPY uv.lock .
+COPY pyproject.toml .
 RUN uv sync
 
 # # # quarto update
