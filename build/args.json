@@ -1,6 +1,6 @@
 {
     "python": {
-        "lin517-devcontainer": {
+        "lin511-devcontainer": {
             "base-image": "python",
             "variants": {
                 "3.13-bookworm": {
