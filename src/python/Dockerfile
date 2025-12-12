@@ -1,12 +1,12 @@
 ARG BASE_IMAGE=python
 # ARG QUARTOVERSION=1.5.56
-ARG VARIANT=3.12-bookworm
+ARG VARIANT=3.13-bookworm
 FROM ${BASE_IMAGE}:${VARIANT}
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # install requirements
-COPY assets/requirements.txt /tmp/pip-tmp/
-RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-    && rm -rf /tmp/pip-tmpf
+COPY uv.lock .
+RUN uv sync
 
 # # # quarto update
 # ARG QUARTOVERSION

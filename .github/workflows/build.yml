@@ -14,9 +14,10 @@ on:
     paths:
       - build/*.json
       - Makefile
-      - src/**.devcontainer.json
-      - src/**Dockerfile
+      - src/**/.devcontainer.json
+      - src/**/Dockerfile
       - src/**/assets/**
+      - src/**/uv.lock
       - "!**.md"
 
 concurrency:
@@ -34,8 +35,7 @@ jobs:
         id: filter
         with:
           filters: |
-            r-ver: ./**/r-ver/**
-            rstudio: ./**/rstudio/**
+            python: ./src/python/**
 
   generate-matrix:
     if: ${{ github.event_name != 'pull_request' }}

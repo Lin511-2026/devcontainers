@@ -3,10 +3,10 @@
         "lin517-devcontainer": {
             "base-image": "python",
             "variants": {
-                "3.12-bookworm": {
+                "3.13-bookworm": {
                     "tags": [
-                        "ghcr.io/lin517-2025/devcontainers/lin517-devcontainer:3.12-bookworm",
-                        "ghcr.io/lin517-2025/devcontainers/lin517-devcontainer:3.12"
+                        "ghcr.io/lin511-2026/devcontainers/lin511-devcontainer:3.13-bookworm",
+                        "ghcr.io/lin511-2026/devcontainers/lin511-devcontainer:3.13"
                     ],
                     "platforms": [
                         "linux/amd64"

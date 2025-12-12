@@ -2,8 +2,8 @@
 	"include": [
 		{
 			"src_name": "python",
-			"image_name": "lin517-devcontainer",
-			"variant": "3.12-bookworm"
+			"image_name": "lin511-devcontainer",
+			"variant": "3.13-bookworm"
 		}
 	]
 }
