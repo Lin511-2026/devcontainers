@@ -1,7 +1,8 @@
-ARG BASE_IMAGE=python
+# ARG BASE_IMAGE=python
 # ARG QUARTOVERSION=1.5.56
-ARG VARIANT=3.13-bookworm
-FROM ${BASE_IMAGE}:${VARIANT}
+# ARG VARIANT=3.13-bookworm
+# FROM ${BASE_IMAGE}:${VARIANT}
+FROM python:3.13-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # install requirements
