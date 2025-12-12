@@ -54,9 +54,8 @@ $(WORK_DIR)/Dockerfile: $(DOCKERFILE) $(WORK_DIR)/meta.env
 	echo '' >>$@
 	echo 'COPY meta.env /usr/local/etc/dev-containers/meta.env' >>$@
 
-ASSETS := $(wildcard src/$(SRC_NAME)/uv.lock src/$(SRC_NAME)/pyproject.toml)
-$(WORK_DIR)/assets/%: src/$(SRC_NAME)/assets/%
-	mkdir -p $(@D)
+ASSETS := $(wildcard src/$(SRC_NAME)/*.lock src/$(SRC_NAME)/*.toml)
+$(WORK_DIR)/%: src/$(SRC_NAME)/%
 	cp -r $< $@
 
 .PHONY: $(WORK_DIR)/meta.env
@@ -69,7 +68,7 @@ $(WORK_DIR)/meta.env:
 	echo "BUILD_TIMESTAMP='$(BUILD_TIMESTAMP)'" >>$@
 
 .PHONY: configfiles
-configfiles: $(WORK_DIR)/.devcontainer.json $(addprefix $(WORK_DIR)/,$(notdir $(DOCKERFILE))) $(addprefix $(WORK_DIR)/assets/,$(notdir $(ASSETS)))
+configfiles: $(WORK_DIR)/.devcontainer.json $(addprefix $(WORK_DIR)/,$(notdir $(DOCKERFILE))) $(addprefix $(WORK_DIR),$(notdir $(ASSETS)))
 
 ################################################################################
 # Tests
