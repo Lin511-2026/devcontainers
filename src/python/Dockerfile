@@ -10,7 +10,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 COPY uv.lock .
 COPY pyproject.toml .
 RUN uv sync
-
+ADD ./.venv ./.venv
 # # # quarto update
 # ARG QUARTOVERSION
 # RUN cd /usr/share/ \
