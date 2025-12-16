@@ -6,7 +6,7 @@ FROM python:3.13-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # install requirements
-ENV UV_PROJECT_ENVIRONMENT="/usr/local"
+# ENV UV_PROJECT_ENVIRONMENT="/usr/local"
 COPY uv.lock .
 COPY pyproject.toml .
 RUN uv sync

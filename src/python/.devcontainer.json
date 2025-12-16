@@ -24,6 +24,7 @@
 	},
 	"postAttachCommand" : {
 	 "rebase" : "git config pull.rebase false",
+	 "sync": "uv sync",
    "punkt": "python -m nltk.downloader 'punkt'",
 	 "punkt_tab": "python -m nltk.downloader 'punkt_tab'"
 	},
